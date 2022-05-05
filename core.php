@@ -1,23 +1,23 @@
 <?php declare(strict_types=1);
 
 /**
- * Plugin Name:       :package_name
- * Plugin URI:        https://github.com/:vendor_slug/:package_slug
- * Description:       :package_description
+ * Plugin Name:       Weglot Companion
+ * Plugin URI:        https://github.com/moderntribe/weglot-companion
+ * Description:       Weglot Companion WordPress Plugin
  * Version:           1.0.0
  * Requires PHP:      7.4
  * Author:            Modern Tribe
  * Author URI:        https://tri.be
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       :package_slug
+ * Text Domain:       weglot-companion
  * Domain Path:       /languages
  */
 
-namespace Tribe\Starter;
+namespace Tribe\Weglot;
 
-use Tribe\Starter\Activation\Activator;
-use Tribe\Starter\Activation\Deactivator;
+use Tribe\Weglot\Activation\Activator;
+use Tribe\Weglot\Activation\Deactivator;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die;
@@ -44,7 +44,7 @@ add_action( 'plugins_loaded', static function (): void {
 			'admin_notices',
 			static function (): void { ?>
 				<div class="notice notice-error">
-					<p><?php esc_html_e( 'Tribe Starter requires Advanced Custom Fields Pro to be installed and activated!', ':package_slug' ); ?></p>
+					<p><?php esc_html_e( 'Tribe Weglot requires Advanced Custom Fields Pro to be installed and activated!', 'weglot-companion' ); ?></p>
 				</div>
 			<?php }
 		);
@@ -52,11 +52,11 @@ add_action( 'plugins_loaded', static function (): void {
 		return;
 	}
 
-	tribe_starter()->init( __FILE__ );
+	tribe_weglot()->init( __FILE__ );
 }, 5, 0 );
 
 
-function tribe_starter(): Core {
+function tribe_weglot(): Core {
 	return Core::instance();
 }
 

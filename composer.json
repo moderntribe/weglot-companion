@@ -1,16 +1,16 @@
 {
-  "name": ":vendor_slug/:package_slug",
-  "description": ":package_description",
+  "name": "moderntribe/weglot-companion",
+  "description": "Weglot Companion WordPress Plugin",
   "type": "wordpress-plugin",
-  "homepage": "https://github.com/:vendor_slug/:package_slug",
+  "homepage": "https://github.com/moderntribe/weglot-companion",
   "keywords": [
-    ":vendor_name",
-    ":package_slug"
+    "Modern Tribe",
+    "weglot-companion"
   ],
   "authors": [
     {
-      "name": ":author_name",
-      "email": "author@domain.com",
+      "name": "Modern Tribe",
+      "email": "admin@tri.be",
       "role": "Developer"
     }
   ],
@@ -58,7 +58,7 @@
   },
   "autoload": {
     "psr-4": {
-      "Tribe\\Starter\\": "src"
+      "Tribe\\Weglot\\": "src"
     }
   },
   "autoload-dev": {

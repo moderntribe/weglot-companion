@@ -1,6 +1,6 @@
-# :package_name
+# Weglot Companion
 
-:package_description
+Weglot Companion WordPress Plugin
 
 ---
 This package can be used to scaffold a modern WordPress plugin. Its architecture is based on our [SquareOne Framework](https://github.com/moderntribe/square-one). Follow these steps to get started:
@@ -88,12 +88,12 @@ See more options: `yarn mix --help`
 If you're using our [SquareOne Framework](https://github.com/moderntribe/square-one) with [Tribe Libs](https://github.com/moderntribe/tribe-libs) v3.4+ you can likely just create a release and composer require the plugin. However, if this results in composer conflicts that can't be resolved, use the private composer method below.
 
 ```bash
-composer require :vendor_slug/:package_slug
+composer require moderntribe/weglot-companion
 ```
 
 #### Private Composer Installer
 
-Every published [release](https://github.com/:vendor_slug/:package_slug/releases) automatically creates a `:package_slug.zip` which is a fully built and vendor scoped WordPress plugin, about a minute after the release is published. To manually install, visit a release and download and extract the zip in your WordPress plugins folder.
+Every published [release](https://github.com/moderntribe/weglot-companion/releases) automatically creates a `weglot-companion.zip` which is a fully built and vendor scoped WordPress plugin, about a minute after the release is published. To manually install, visit a release and download and extract the zip in your WordPress plugins folder.
 
 However, the best way to include the release zip is by using the fantastic [ffraenz/private-composer-installer](https://github.com/ffraenz/private-composer-installer) plugin.
 
@@ -104,12 +104,12 @@ Add a custom repository to your project's `repository` key in `composer.json`:
     {
       "type": "package",
       "package": {
-        "name": ":vendor_slug/:package_slug",
+        "name": "moderntribe/weglot-companion",
         "version": "1.0.0",
         "type": "wordpress-plugin",
         "dist": {
           "type": "zip",
-          "url": "https://github.com/:vendor_slug/:package_slug/releases/download/{%VERSION}/:package_slug.zip"
+          "url": "https://github.com/moderntribe/weglot-companion/releases/download/{%VERSION}/weglot-companion.zip"
         },
         "require": {
           "ffraenz/private-composer-installer": "^5.0"
@@ -125,7 +125,7 @@ Then, add the plugin definition to the require section:
 
 ```json
   "require": {
-    ":vendor_slug/:package_slug": "*",
+    "moderntribe/weglot-companion": "*",
   }
 ```
 

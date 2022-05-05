@@ -1,16 +1,16 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Starter\Resources;
+namespace Tribe\Weglot\Resources;
 
-use Tribe\Starter\Resources\Admin\Admin_Script_Loader;
-use Tribe\Starter\Resources\Admin\Editor_Script_Loader;
-use Tribe\Starter\Resources\Theme\Script_Loader;
+use Tribe\Weglot\Resources\Admin\Admin_Script_Loader;
+use Tribe\Weglot\Resources\Admin\Editor_Script_Loader;
+use Tribe\Weglot\Resources\Theme\Script_Loader;
 use Tribe\Libs\Container\Abstract_Subscriber;
 
 /**
  * Class Asset_Subscriber
  *
- * @package Tribe\Starter
+ * @package Tribe\Weglot
  */
 class Resource_Subscriber extends Abstract_Subscriber {
 

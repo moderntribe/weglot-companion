@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Starter;
+namespace Tribe\Weglot;
 
-use Tribe\Starter\Activation\Operable;
+use Tribe\Weglot\Activation\Operable;
 use Tribe\Tests\Test_Case;
 
 final class Core_Test extends Test_Case {
 
 	public function test_it_set_up_the_test_suite_correctly() {
 		$this->assertTrue( true );
-		$this->assertTrue( is_plugin_active( ':package_slug/core.php' ) );
+		$this->assertTrue( is_plugin_active( 'weglot-companion/core.php' ) );
 	}
 
 	public function test_it_has_a_stored_plugin_version() {

@@ -1,11 +1,11 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Starter\Activation;
+namespace Tribe\Weglot\Activation;
 
 /**
  * Invoked during plugin deactivation.
  *
- * @package Tribe\Starter\Activation
+ * @package Tribe\Weglot\Activation
  */
 class Deactivator implements Operable {
 

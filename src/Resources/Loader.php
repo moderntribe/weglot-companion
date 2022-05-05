@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Starter\Resources;
+namespace Tribe\Weglot\Resources;
 
 /**
  * Abstract Script and Style Loader.

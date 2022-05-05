@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', function () {
-	console.log(':package_name block editor scripts initialized');
+	console.log('Weglot Companion block editor scripts initialized');
 });

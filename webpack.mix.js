@@ -46,13 +46,13 @@ mix.options({
 		require('postcss-custom-media'),
 		require('postcss-nested'),
 		require('postcss-assets')({
-			baseUrl: '/wp-content/plugins/:package_slug/assets/',
+			baseUrl: '/wp-content/plugins/weglot-companion/assets/',
 		})
 	]
 });
 
 mix.browserSync({
-	proxy: ':package_slug.tribe',
+	proxy: 'weglot-companion.tribe',
 });
 
 /**

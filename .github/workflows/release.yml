@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      ZIP_NAME: :package_slug.zip
-      ZIP_FOLDER: :package_slug
+      ZIP_NAME: weglot-companion.zip
+      ZIP_FOLDER: weglot-companion
 
     steps:
       - name: Checkout

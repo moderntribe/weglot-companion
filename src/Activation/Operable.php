@@ -1,15 +1,15 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Starter\Activation;
+namespace Tribe\Weglot\Activation;
 
 /**
  * Implement for activators/deactivators.
  *
- * @package Tribe\Starter
+ * @package Tribe\Weglot
  */
 interface Operable {
 
-	public const OPTION_NAME = 'tribe_starter';
+	public const OPTION_NAME = 'tribe_weglot';
 
 	/**
 	 * @param  bool  $network_wide Pass via WordPress if this is a network activation

@@ -1,3 +1,3 @@
 document.addEventListener('DOMContentLoaded', function () {
-	console.log(':package_name theme scripts initialized');
+	console.log('Weglot Companion theme scripts initialized');
 });

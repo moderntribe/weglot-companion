@@ -77,7 +77,7 @@ return [
 	// will be generated instead.
 	//
 	// For more see: https://github.com/humbug/php-scoper/blob/master/docs/configuration.md#prefix
-	'prefix'                  => 'Tribe\\Starter_Scoped',
+	'prefix'                  => 'Tribe\\Weglot_Scoped',
 
 	// By default, when running php-scoper add-prefix, it will prefix all relevant code found in the current working
 	// directory. You can however define which files should be scoped by defining a collection of Finders in the
@@ -124,13 +124,13 @@ return [
 	'patchers'                => [
 		static function ( string $filePath, string $prefix, string $content ): string {
 
-			if ( ! tribe_str_ends_with( $filePath, ':package_slug/core.php' ) ) {
+			if ( ! tribe_str_ends_with( $filePath, 'weglot-companion/core.php' ) ) {
 				return $content;
 			}
 
 			// PHP-Scoper is putting this in a global namespace for some reason.
 			// Replace any files that contain a call to the plugin's function.
-			return str_replace( '\\tribe_starter()->', 'tribe_starter()->', $content );
+			return str_replace( '\\tribe_weglot()->', 'tribe_weglot()->', $content );
 		},
 		static function ( string $filePath, string $prefix, string $content ): string {
 
@@ -147,7 +147,7 @@ return [
 	//
 	// For more information see: https://github.com/humbug/php-scoper/blob/master/docs/configuration.md#excluded-symbols
 	'exclude-namespaces'      => [
-		'Tribe\Starter',
+		'Tribe\Weglot',
 		// 'Acme\Foo'                     // The Acme\Foo namespace (and sub-namespaces)
 		// '~^PHPUnit\\\\Framework$~',    // The whole namespace PHPUnit\Framework (but not sub-namespaces)
 		// '~^$~',                        // The root namespace only
