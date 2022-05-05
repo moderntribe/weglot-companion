@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4b59f6e4637be3343b10452b7147e20d",
+    "content-hash": "3f78cc5ce45798f43acc0d7166c9b94f",
     "packages": [
         {
             "name": "enshrined/svg-sanitize",
@@ -8624,6 +8624,24 @@
                 "wiki": "https://github.com/WordPress/WordPress-Coding-Standards/wiki"
             },
             "time": "2020-05-13T23:57:56+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/weglot",
+            "version": "3.6.1",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/weglot/",
+                "reference": "tags/3.6.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/weglot.3.6.1.zip"
+            },
+            "require": {
+                "composer/installers": "^1.0 || ^2.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/weglot/"
         },
         {
             "name": "xrstf/composer-php52",
