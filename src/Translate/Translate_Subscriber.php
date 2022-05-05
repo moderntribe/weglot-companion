@@ -16,8 +16,8 @@ class Translate_Subscriber extends Abstract_Subscriber {
 		 *
 		 * @filter tribe/weglot/translate
 		 *
-		 * @example $translated = apply_filters( Weglot_Provider::FILTER, '<p>Some kind of HTML content</p>' );
-		 * @example $translated = apply_filters( Weglot_Provider::FILTER, [ '<li>some content</li>', '<li>some more content</li>' ] );
+		 * @example $translated = apply_filters( Translate_Subscriber::FILTER, '<p>Some kind of HTML content</p>' );
+		 * @example $translated = apply_filters( Translate_Subscriber::FILTER, [ '<li>some content</li>', '<li>some more content</li>' ] );
 		 *
 		 * @param  string|string[]  $content  The raw content or HTML markup to translate.
 		 *
