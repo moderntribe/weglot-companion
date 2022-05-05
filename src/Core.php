@@ -7,6 +7,8 @@ use Psr\Container\ContainerInterface;
 use Throwable;
 use Tribe\Weglot\Resources\Resource_Definer;
 use Tribe\Weglot\Resources\Resource_Subscriber;
+use Tribe\Weglot\Translate\Translate_Definer;
+use Tribe\Weglot\Translate\Translate_Subscriber;
 
 /**
  * Class Core
@@ -32,6 +34,7 @@ final class Core {
 	 */
 	private array $definers = [
 		Resource_Definer::class,
+		Translate_Definer::class,
 	];
 
 	/**
@@ -39,6 +42,7 @@ final class Core {
 	 */
 	private array $subscribers = [
 		Resource_Subscriber::class,
+		Translate_Subscriber::class,
 	];
 
 	private static self $instance;
