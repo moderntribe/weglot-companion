@@ -61,8 +61,6 @@ add_action( 'plugins_loaded', static function (): void {
 				</div>
 			<?php }
 		);
-
-		return;
 	}
 
 	tribe_weglot()->init( __FILE__ );
