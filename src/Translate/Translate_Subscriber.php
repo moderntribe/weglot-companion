@@ -20,21 +20,21 @@ class Translate_Subscriber extends Abstract_Subscriber {
 		}
 
 		/**
-		 * Manually translate content with Weglot (generally for HTML returned via Ajax).
+		 * Manually translate content with Weglot.
 		 *
 		 * @filter  tribe/weglot/translate
 		 *
-		 * @example $translated = apply_filters( Translate_Subscriber::FILTER, [ '<li>some content</li>', '<li>some more content</li>' ] );
-		 * @example $translated = apply_filters( Translate_Subscriber::FILTER, '<p>Some kind of HTML content</p>' );
-		 *
-		 * @param string|string[] $content The raw content or HTML markup to translate.
-		 * @param string          $type    The type of content this is, so Weglot knows what to do with it.
+		 * @param string|string[] $content   The raw content or HTML markup to translate.
+		 * @param string          $type      The type of content this is, so Weglot knows what to do with it.
+		 * @param string[]        $json_keys Additional JSON keys to translate if $type is "json".
 		 *
 		 * @return string|string[] The translated content.
 		 */
-		add_filter( self::FILTER, static function ( $content, string $type = self::TYPE_HTML ) {
+		add_filter( self::FILTER, static function ( $content, string $type = self::TYPE_HTML, array $json_keys = [] ) {
 			try {
-				return $this->container->get( Translation_Factory::class )->make( $type )->translate( $content );
+				return $this->container->get( Translation_Factory::class )
+									   ->make( $type, $json_keys )
+									   ->translate( $content );
 			} catch ( Throwable $e ) {
 				if ( defined( 'WP_DEBUG' ) && WP_DEBUG ) {
 					throw $e;

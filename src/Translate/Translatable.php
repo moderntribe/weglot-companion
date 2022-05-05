@@ -15,7 +15,7 @@ interface Translatable {
 	 *
 	 * @see \Tribe\Weglot\Translate\Translate_Subscriber::FILTER
 	 *
-	 * @param  string|string[]  $content  The content to translate.
+	 * @param  string|mixed[]  $content  The content to translate.
 	 *
 	 * @throws \Weglot\Client\Api\Exception\InputAndOutputCountMatchException
 	 * @throws \Weglot\Client\Api\Exception\InvalidWordTypeException
@@ -23,7 +23,7 @@ interface Translatable {
 	 * @throws \Weglot\Client\Api\Exception\MissingWordsOutputException
 	 * @throws \Weglot\Client\Api\Exception\ApiError
 	 *
-	 * @return string|string[] The translated content.
+	 * @return string|mixed[] The translated content.
 	 */
 	public function translate( $content );
 

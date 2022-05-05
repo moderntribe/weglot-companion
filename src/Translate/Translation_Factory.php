@@ -21,10 +21,23 @@ class Translation_Factory {
 		$this->strategies = $strategies;
 	}
 
-	public function make( string $type ): Translatable {
-		$strategy = $this->strategies[ $type ] ?? Html::class;
+	/**
+	 * Make a Translatable instance.
+	 *
+	 * @param string $type      The type of content to make the strategy from.
+	 * @param array  $json_keys Additional JSON keys to process, if $type is JSON.
+	 *
+	 * @throws \DI\DependencyException
+	 * @throws \DI\NotFoundException
+	 *
+	 * @return \Tribe\Weglot\Translate\Translatable
+	 */
+	public function make( string $type, array $json_keys = [] ): Translatable {
+		$strategy_class = $this->strategies[ $type ] ?? Html::class;
 
-		return $this->container->make( $strategy );
+		return $this->container->make( $strategy_class, [
+			'json_keys' => $json_keys,
+		] );
 	}
 
 }
