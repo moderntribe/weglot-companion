@@ -5,6 +5,8 @@ namespace Tribe\Tests;
 use Codeception\TestCase\WPTestCase;
 use Psr\Container\ContainerInterface;
 
+use function Tribe\Weglot\tribe_weglot;
+
 /**
  * Class Test_Case
  * Test case with specific actions for Square One projects.
