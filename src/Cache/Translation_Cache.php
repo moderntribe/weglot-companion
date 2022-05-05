@@ -95,20 +95,20 @@ class Translation_Cache {
 	 * @return bool
 	 */
 	public function set( $content, string $language_code, int $post_id, int $expire = 0 ): bool {
-		$reference_key    = $this->build_reference_key( $post_id, $language_code );
-		$translation_keys = $this->get( $post_id );
+		$reference_key = $this->build_reference_key( $post_id, $language_code );
+		$reference_map = $this->get_reference_map( $post_id );
 
-		$translation_keys = array_filter( array_merge( $translation_keys, [
+		$reference_map = array_filter( array_merge( $reference_map, [
 			$language_code => $reference_key,
 		] ) );
 
-		// Store the translated content in its own unique key
+		// Store the translated content in its own unique key.
 		if ( ! $this->cache->set( $reference_key, $content, 'tribe', $expire ) ) {
 			return false;
 		}
 
-		// Store the references to the translations
-		return $this->cache->set( $this->get_cache_key( $post_id ), $translation_keys, 'tribe', $expire );
+		// Store the references to the translation keys.
+		return $this->cache->set( $this->get_cache_key( $post_id ), $reference_map, 'tribe', $expire );
 	}
 
 	/**
