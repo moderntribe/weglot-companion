@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 /**
- * Plugin Name:       Weglot Companion
+ * Plugin Name:       Tribe Weglot Companion
  * Plugin URI:        https://github.com/moderntribe/weglot-companion
  * Description:       Weglot Companion WordPress Plugin
  * Version:           1.0.0
