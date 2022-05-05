@@ -1,12 +1,14 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Weglot\Translate;
+namespace Tribe\Weglot\Translate\Strategies;
 
+use Tribe\Weglot\Translate\Language;
+use Tribe\Weglot\Translate\Translatable;
 use Weglot\Parser\Parser;
 use WeglotWP\Services\Replace_Url_Service_Weglot;
 
 /**
- * A Translation Manager for Weglot.
+ * Translatable HTML content with Weglot.
  *
  * Weglot's methods have too many responsibilities, so there is no single method/function
  * to just simply translate HTML or content, it always does much more than that.
@@ -18,7 +20,7 @@ use WeglotWP\Services\Replace_Url_Service_Weglot;
  * @see \Tribe\Weglot\Translate\Translate_Subscriber::FILTER
  * @see \Tribe\Weglot\Translate\Translate_Subscriber::register()
  */
-class Translation_Manager {
+class Html implements Translatable {
 
 	public const EOL_HTML = '<!-- EOL -->';
 
@@ -79,7 +81,7 @@ class Translation_Manager {
 	}
 
 	/**
-	 * Translate an array of HTML of content.
+	 * Translatable an array of HTML of content.
 	 *
 	 * @param  string[]  $content
 	 *
