@@ -6,7 +6,28 @@ Provides additional functionality for the [Weglot Translate Plugin](https://word
 This plugin makes available the following features:
 1. Translation caching using object caching.
 2. Better translate filters/interfaces for developer use to translate content manually that Weglot is unable to translate.
+
+Manually translate content that Weglot misses, like HTML returned from an Ajax request.
+
+The Weglot plugin must be installed and activated for this to work, otherwise it will just silently return the original content.
+
+#### Translate an HTML string
+
+```php
+$translated = apply_filters( \Tribe\Weglot\Translate\Translate_Subscriber::FILTER, '<p>Some kind of HTML content</p>' );
+```
+
+#### Translate an array of HTML strings
+
+```php
+$translated = apply_filters( \Tribe\Weglot\Translate\Translate_Subscriber::FILTER, [
+    '<li>some content</li>',
+    '<li>some more content</li>'
+    // etc...
+] );
+```
 ---
+
 
 ### Requirements
 - php7.4+
