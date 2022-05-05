@@ -52,6 +52,19 @@ add_action( 'plugins_loaded', static function (): void {
 		return;
 	}
 
+	if ( ! defined( 'WEGLOT_VERSION' ) ) {
+		add_action(
+			'admin_notices',
+			static function (): void { ?>
+				<div class="notice notice-error">
+					<p><?php esc_html_e( 'Tribe Weglot requires the Weglot Translate plugin to be installed and activated!', 'weglot-companion' ); ?></p>
+				</div>
+			<?php }
+		);
+
+		return;
+	}
+
 	tribe_weglot()->init( __FILE__ );
 }, 5, 0 );
 
