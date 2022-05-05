@@ -5,9 +5,13 @@ namespace Tribe\Weglot;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Throwable;
+use Tribe\Libs\Object_Meta\Object_Meta_Subscriber;
+use Tribe\Libs\Settings\Settings_Subscriber;
 use Tribe\Weglot\Cache\Cache_Subscriber;
+use Tribe\Weglot\Meta\Meta_Definer;
 use Tribe\Weglot\Resources\Resource_Definer;
 use Tribe\Weglot\Resources\Resource_Subscriber;
+use Tribe\Weglot\Settings\Settings_Definer;
 use Tribe\Weglot\Translate\Translate_Definer;
 use Tribe\Weglot\Translate\Translate_Subscriber;
 
@@ -36,15 +40,19 @@ final class Core {
 	private array $definers = [
 		Resource_Definer::class,
 		Translate_Definer::class,
+		Meta_Definer::class,
+		Settings_Definer::class,
 	];
 
 	/**
 	 * @var \Tribe\Libs\Container\Abstract_Subscriber[]
 	 */
 	private array $subscribers = [
+		Object_Meta_Subscriber::class,
 		Resource_Subscriber::class,
 		Cache_Subscriber::class,
 		Translate_Subscriber::class,
+		Settings_Subscriber::class,
 	];
 
 	private static self $instance;

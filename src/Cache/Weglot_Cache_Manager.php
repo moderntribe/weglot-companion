@@ -2,6 +2,8 @@
 
 namespace Tribe\Weglot\Cache;
 
+use Tribe\Weglot\Meta\Weglot_Settings_Meta;
+use Tribe\Weglot\Settings\Weglot_Settings;
 use Tribe\Weglot\Translate\Language;
 use WeglotWP\Services\Translate_Service_Weglot;
 
@@ -15,17 +17,20 @@ class Weglot_Cache_Manager {
 	protected Language $language;
 	protected Translate_Service_Weglot $translate;
 	protected Post_Identifier $post_identifier;
+	protected Weglot_Settings $settings;
 
 	public function __construct(
 		Translation_Cache $cache,
 		Language $language,
 		Translate_Service_Weglot $translate,
-		Post_Identifier $post_identifier
+		Post_Identifier $post_identifier,
+		Weglot_Settings $settings
 	) {
 		$this->cache           = $cache;
 		$this->language        = $language;
 		$this->translate       = $translate;
 		$this->post_identifier = $post_identifier;
+		$this->settings        = $settings;
 	}
 
 	/**
@@ -108,6 +113,10 @@ class Weglot_Cache_Manager {
 		}
 
 		if ( is_admin() ) {
+			return true;
+		}
+
+		if ( $this->settings->get_setting( Weglot_Settings_Meta::FIELD_DISABLE_CACHING ) ) {
 			return true;
 		}
 
