@@ -5,6 +5,7 @@ namespace Tribe\Weglot;
 use DI\ContainerBuilder;
 use Psr\Container\ContainerInterface;
 use Throwable;
+use Tribe\Weglot\Cache\Cache_Subscriber;
 use Tribe\Weglot\Resources\Resource_Definer;
 use Tribe\Weglot\Resources\Resource_Subscriber;
 use Tribe\Weglot\Translate\Translate_Definer;
@@ -42,6 +43,7 @@ final class Core {
 	 */
 	private array $subscribers = [
 		Resource_Subscriber::class,
+		Cache_Subscriber::class,
 		Translate_Subscriber::class,
 	];
 
