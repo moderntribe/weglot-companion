@@ -11,6 +11,11 @@ class Translate_Subscriber extends Abstract_Subscriber {
 
 	public function register(): void {
 
+		// The Weglot plugin isn't installed or activated.
+		if ( ! defined( 'WEGLOT_VERSION' ) ) {
+			return;
+		}
+
 		/**
 		 * Manually translate content with Weglot (generally for HTML returned via Ajax).
 		 *
