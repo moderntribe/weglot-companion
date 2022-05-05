@@ -126,6 +126,8 @@ class Translation_Cache {
 			$this->cache->delete( $key );
 		}
 
+		$this->reference_cache = null;
+
 		// Delete the references
 		return $this->cache->delete( $this->get_cache_key( $post_id ) );
 	}
