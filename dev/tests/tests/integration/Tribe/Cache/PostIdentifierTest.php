@@ -24,8 +24,7 @@ final class PostIdentifierTest extends Test_Case {
 
 	public function test_it_identifies_a_post_by_post_global(): void {
 		$post_id         = $this->factory()->post->create();
-		$post            = get_post( $post_id );
-		$GLOBALS['post'] = $post;
+		$GLOBALS['post'] = get_post( $post_id );
 
 		$post_identifier = new Post_Identifier();
 
