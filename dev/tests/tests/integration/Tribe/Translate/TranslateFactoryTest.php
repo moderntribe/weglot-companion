@@ -1,10 +1,13 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Weglot\Translate;
+namespace Tribe\Tests\Translate;
 
 use Tribe\Tests\Test_Case;
 use Tribe\Weglot\Translate\Strategies\Html;
 use Tribe\Weglot\Translate\Strategies\Json;
+use Tribe\Weglot\Translate\Translatable;
+use Tribe\Weglot\Translate\Translate_Subscriber;
+use Tribe\Weglot\Translate\Translation_Factory;
 
 class TranslateFactoryTest extends Test_Case {
 

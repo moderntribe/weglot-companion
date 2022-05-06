@@ -1,8 +1,9 @@
 <?php declare(strict_types=1);
 
-namespace Tribe\Weglot\Cache;
+namespace Tribe\Tests\Cache;
 
 use Tribe\Tests\Test_Case;
+use Tribe\Weglot\Cache\Post_Identifier;
 
 final class PostIdentifierTest extends Test_Case {
 
