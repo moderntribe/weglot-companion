@@ -91,6 +91,7 @@
   "minimum-stability": "dev",
   "prefer-stable": true,
   "extra": {
+    "enable-patching": true,
     "wordpress-install-dir": "public/wp",
     "installer-paths": {
       "public/wp-content/plugins/{$name}": [
