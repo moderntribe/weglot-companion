@@ -102,9 +102,7 @@ class Translation_Cache {
 	 */
 	public function set( $content, string $language_code, int $post_id, int $expire = 0 ): bool {
 		$reference_key = $this->build_reference_key( $post_id, $language_code );
-		$reference_map = $this->get_reference_map( $post_id );
-
-		$reference_map = array_filter( array_merge( $reference_map, [
+		$reference_map = array_filter( array_merge( $this->get_reference_map( $post_id ), [
 			$language_code => $reference_key,
 		] ) );
 
