@@ -8,6 +8,7 @@ use Throwable;
 use Tribe\Libs\Object_Meta\Object_Meta_Subscriber;
 use Tribe\Libs\Settings\Settings_Subscriber;
 use Tribe\Weglot\Cache\Cache_Subscriber;
+use Tribe\Weglot\Config\Config_Subscriber;
 use Tribe\Weglot\Meta\Meta_Definer;
 use Tribe\Weglot\Settings\Settings_Definer;
 use Tribe\Weglot\Translate\Translate_Definer;
@@ -45,6 +46,7 @@ final class Core {
 	 * @var \Tribe\Libs\Container\Abstract_Subscriber[]
 	 */
 	private array $subscribers = [
+		Config_Subscriber::class,
 		Object_Meta_Subscriber::class,
 		Cache_Subscriber::class,
 		Translate_Subscriber::class,

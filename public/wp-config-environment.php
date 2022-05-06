@@ -162,6 +162,7 @@ $config_defaults = [
 	'TRIBE_GLOMAR'                   => tribe_getenv( 'TRIBE_GLOMAR', '' ),
 
 	'TRIBE_LOG_CLI'                  => tribe_getenv( 'TRIBE_LOG_CLI', true ),
+	'WEGLOT_API_KEY'                 => tribe_getenv( 'WEGLOT_API_KEY', '' ),
 ];
 
 // ==============================================================
