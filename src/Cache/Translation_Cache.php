@@ -23,8 +23,14 @@ class Translation_Cache {
 	 */
 	protected ?array $reference_cache = null;
 
-	public function __construct( Cache $cache ) {
-		$this->cache = $cache;
+	/**
+	 * Enable in-memory caching.
+	 */
+	protected bool $use_memory_cache;
+
+	public function __construct( Cache $cache, bool $use_memory_cache = true ) {
+		$this->cache            = $cache;
+		$this->use_memory_cache = $use_memory_cache;
 	}
 
 	/**
@@ -46,7 +52,7 @@ class Translation_Cache {
 	 * @return array<string, string>
 	 */
 	public function get( int $post_id ): array {
-		if ( ! empty( $this->translation_cache[ $post_id ] ) ) {
+		if ( $this->use_memory_cache && ! empty( $this->translation_cache[ $post_id ] ) ) {
 			return $this->translation_cache[ $post_id ];
 		}
 
@@ -153,7 +159,7 @@ class Translation_Cache {
 	 * @return array<string, string>
 	 */
 	protected function get_reference_map( int $post_id ): array {
-		if ( $this->reference_cache && is_array( $this->reference_cache[ $post_id ] ) ) {
+		if ( $this->use_memory_cache && ! empty( $this->reference_cache[ $post_id ] ) ) {
 			return $this->reference_cache[ $post_id ];
 		}
 
