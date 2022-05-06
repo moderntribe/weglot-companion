@@ -56,7 +56,7 @@ final class TranslationCacheTest extends Test_Case {
 		$this->assertSame( '', $this->translation_cache->get_by_language( 'sv', $this->test_post_id ) );
 	}
 
-	public function test_in_memory_cache(): void {
+	public function test_in_sets_and_deletes_from_in_memory_cache(): void {
 		$test_post_id_2 = 45;
 		$cache          = new Translation_Cache( $this->cache, true );
 
@@ -99,6 +99,24 @@ final class TranslationCacheTest extends Test_Case {
 				'sv' => 'tribe_weglot_45_sv',
 			],
 		], $reference_prop->getValue( $cache ) );
+
+		$this->assertTrue( $cache->delete( $this->test_post_id ) );
+
+		$this->assertSame( [
+			$test_post_id_2 => [
+				'sv' => 'Hej på svenska',
+			],
+		], $translation_prop->getValue( $cache ) );
+
+		$this->assertSame( [
+			$test_post_id_2 => [
+				'sv' => 'tribe_weglot_45_sv',
+			],
+		], $reference_prop->getValue( $cache ) );
+
+		$this->assertTrue( $cache->delete( $test_post_id_2 ) );
+		$this->assertEmpty( $translation_prop->getValue( $cache ) );
+		$this->assertEmpty( $reference_prop->getValue( $cache ) );
 
 	}
 

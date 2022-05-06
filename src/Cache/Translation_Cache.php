@@ -130,7 +130,14 @@ class Translation_Cache {
 			$this->cache->delete( $key );
 		}
 
-		$this->reference_cache = null;
+		// Remove from in-memory caches.
+		if ( isset( $this->reference_cache[ $post_id ] ) ) {
+			unset( $this->reference_cache[ $post_id ] );
+		}
+
+		if ( isset( $this->translation_cache[ $post_id ] ) ) {
+			unset( $this->translation_cache[ $post_id ] );
+		}
 
 		// Delete the references
 		return $this->cache->delete( $this->get_cache_key( $post_id ) );
