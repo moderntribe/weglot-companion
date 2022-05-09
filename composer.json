@@ -64,7 +64,10 @@
   "autoload": {
     "psr-4": {
       "Tribe\\Weglot\\": "src"
-    }
+    },
+    "files": [
+      "vendor/php-di/php-di/src/functions.php"
+    ]
   },
   "autoload-dev": {
     "psr-4": {
