@@ -30,7 +30,7 @@ class Translate_Subscriber extends Abstract_Subscriber {
 		 *
 		 * @return string|string[] The translated content.
 		 */
-		add_filter( self::FILTER, static function ( $content, string $type = self::TYPE_HTML, array $json_keys = [] ) {
+		add_filter( self::FILTER, function ( $content, string $type = self::TYPE_HTML, array $json_keys = [] ) {
 			try {
 				return $this->container->get( Translation_Factory::class )
 									   ->make( $type, $json_keys )
