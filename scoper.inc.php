@@ -149,6 +149,7 @@ return [
 	'exclude-namespaces'      => [
 		'Tribe\Weglot',
 		'WeglotWP',
+		'Weglot',
 		// 'Acme\Foo'                     // The Acme\Foo namespace (and sub-namespaces)
 		// '~^PHPUnit\\\\Framework$~',    // The whole namespace PHPUnit\Framework (but not sub-namespaces)
 		// '~^$~',                        // The root namespace only
