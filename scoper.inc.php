@@ -148,7 +148,7 @@ return [
 			}
 
 			// Fix php-di function_exists's checks that don't include the proper namespace
-			return str_replace( "function_exists('DI\\", sprintf( "function_exists('Tribe\\\Weglot_Scoped\\\DI\\", $prefix ), $content );
+			return str_replace( "function_exists('DI\\", "function_exists('Tribe\\\Weglot_Scoped\\\DI\\", $content );
 		},
 	],
 
