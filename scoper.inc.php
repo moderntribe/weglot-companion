@@ -141,6 +141,15 @@ return [
 			// Ensure our meta repo WP filter is unique from other tribe-libs instances
 			return str_replace( 'tribe_get_meta_repo', 'tribe_get_meta_repo_scoped', $content );
 		},
+		static function ( string $filePath, string $prefix, string $content ): string {
+
+			if ( ! tribe_str_ends_with( $filePath, 'php-di/src/functions.php' ) ) {
+				return $content;
+			}
+
+			// Fix php-di function_exists's checks that don't include the proper namespace
+			return str_replace( "function_exists('DI\\", sprintf( "function_exists('\%s\DI", $prefix ), $content );
+		},
 	],
 
 	// List of symbols to consider internal i.e. to leave untouched.
