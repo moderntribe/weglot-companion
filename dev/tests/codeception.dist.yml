@@ -37,7 +37,7 @@ modules:
             dump: tests/_data/dump.sql
             url: '%ACCEPTANCE_WP_URL%'
             tablePrefix: '%TABLE_PREFIX%'
-            urlReplacement: false
+            urlReplacement: true
             # populate: true (We recommend each suite define this parameter explicitly)
             # cleanup: true (We recommend each suite define this parameter explicitly)
         WPBrowser:
@@ -66,7 +66,9 @@ modules:
             theme: twentytwentytwo
             plugins:
                 - advanced-custom-fields-pro/acf.php
+                - weglot/weglot.php
                 - weglot-companion/core.php
             activatePlugins:
                 - advanced-custom-fields-pro/acf.php
+                - weglot/weglot.php
                 - weglot-companion/core.php

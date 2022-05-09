@@ -1,18 +1,33 @@
 # Weglot Companion
 
-Weglot Companion WordPress Plugin
+Provides additional functionality for the [Weglot Translate Plugin](https://wordpress.org/plugins/weglot/).
 
 ---
-This package can be used to scaffold a modern WordPress plugin. Its architecture is based on our [SquareOne Framework](https://github.com/moderntribe/square-one). Follow these steps to get started:
+This plugin makes available the following features:
+1. Translation caching using object caching.
+2. Better translate filters/interfaces for developer use to translate content manually that Weglot is unable to translate.
 
-1. Press the "Use template" button at the top of this repo to create a new repo with the contents of this skeleton.
-2. Run `php ./configure.php` to run a script that will replace all placeholders throughout all the files.
-3. Manually delete `undo-configure.php` once you're satisfied with the replacement.
-4. Commit the `composer.lock` file.
-5. Adjust this README to suit your plugin.
-6. Submit your repo to [packagist](https://packagist.org/).
-7. Create a release in GitHub.
+Manually translate content that Weglot misses, like HTML returned from an Ajax request.
+
+The Weglot plugin must be installed and activated for this to work, otherwise it will just silently return the original content.
+
+#### Translate an HTML string
+
+```php
+$translated = apply_filters( \Tribe\Weglot\Translate\Translate_Subscriber::FILTER, '<p>Some kind of HTML content</p>' );
+```
+
+#### Translate an array of HTML strings
+
+```php
+$translated = apply_filters( \Tribe\Weglot\Translate\Translate_Subscriber::FILTER, [
+    '<li>some content</li>',
+    '<li>some more content</li>'
+    // etc...
+] );
+```
 ---
+
 
 ### Requirements
 - php7.4+

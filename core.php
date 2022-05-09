@@ -1,7 +1,7 @@
 <?php declare(strict_types=1);
 
 /**
- * Plugin Name:       Weglot Companion
+ * Plugin Name:       Tribe Weglot Companion
  * Plugin URI:        https://github.com/moderntribe/weglot-companion
  * Description:       Weglot Companion WordPress Plugin
  * Version:           1.0.0
@@ -50,6 +50,17 @@ add_action( 'plugins_loaded', static function (): void {
 		);
 
 		return;
+	}
+
+	if ( ! defined( 'WEGLOT_VERSION' ) ) {
+		add_action(
+			'admin_notices',
+			static function (): void { ?>
+				<div class="notice notice-error">
+					<p><?php esc_html_e( 'Tribe Weglot requires the Weglot Translate plugin to be installed and activated!', 'weglot-companion' ); ?></p>
+				</div>
+			<?php }
+		);
 	}
 
 	tribe_weglot()->init( __FILE__ );
