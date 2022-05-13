@@ -24,7 +24,7 @@ class Post_Identifier {
 
 		$post_id = $post->ID ?? 0;
 
-		if ( ! empty ( max( $post_id, 0 ) ) ) {
+		if ( ! empty( max( $post_id, 0 ) ) ) {
 			return $post->ID;
 		}
 
