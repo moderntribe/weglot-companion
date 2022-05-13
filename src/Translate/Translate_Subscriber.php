@@ -42,7 +42,7 @@ class Translate_Subscriber extends Abstract_Subscriber {
 
 				return $content;
 			}
-		}, 10, 1 );
+		}, 10, 3 );
 	}
 
 }
