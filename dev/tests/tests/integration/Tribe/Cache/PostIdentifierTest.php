@@ -26,7 +26,7 @@ final class PostIdentifierTest extends Test_Case {
 		$post_id         = $this->factory()->post->create();
 		$GLOBALS['post'] = get_post( $post_id );
 
-		$post_identifier = new Post_Identifier();
+		$post_identifier = $this->container->get( Post_Identifier::class );
 
 		$this->assertSame( $post_id, $post_identifier->get_current_post_id() );
 	}
@@ -43,7 +43,25 @@ final class PostIdentifierTest extends Test_Case {
 
 		$this->assertEmpty( $GLOBALS['post'] );
 
-		$post_identifier = new Post_Identifier();
+		$post_identifier = $this->container->get( Post_Identifier::class );
+
+		$this->assertSame( $post_id, $post_identifier->get_current_post_id() );
+	}
+
+	public function test_it_identifies_a_post_by_uri_with_bad_post_id(): void {
+		$post_id = $this->factory()->post->create( [
+			'post_status' => 'publish',
+			'post_type'   => 'page',
+			'post_name'   => 'another-test-post',
+		] );
+
+		// set a mock REQUEST_URI for url_to_postid()
+		$_SERVER['REQUEST_URI'] = '/another-test-post/';
+
+		$GLOBALS['post']     = get_post( $post_id );
+		$GLOBALS['post']->ID = - 1;
+
+		$post_identifier = $this->container->get( Post_Identifier::class );
 
 		$this->assertSame( $post_id, $post_identifier->get_current_post_id() );
 	}
