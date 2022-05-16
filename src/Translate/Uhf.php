@@ -6,7 +6,7 @@ namespace Tribe\Weglot\Translate;
  * The Microsoft UHF banner is a custom plugin to provide Microsoft sites
  * with a header and footer.
  *
- * This class won't do anything if that plugin isn't active an in use.
+ * This class won't do anything if that plugin isn't active.
  */
 class Uhf {
 
