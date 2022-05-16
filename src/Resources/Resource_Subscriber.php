@@ -2,10 +2,10 @@
 
 namespace Tribe\Weglot\Resources;
 
+use Tribe\Libs\Container\Abstract_Subscriber;
 use Tribe\Weglot\Resources\Admin\Admin_Script_Loader;
 use Tribe\Weglot\Resources\Admin\Editor_Script_Loader;
 use Tribe\Weglot\Resources\Theme\Script_Loader;
-use Tribe\Libs\Container\Abstract_Subscriber;
 
 /**
  * Class Asset_Subscriber

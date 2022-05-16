@@ -2,8 +2,6 @@
 
 namespace Tribe\Weglot\Translate;
 
-use Throwable;
-
 /**
  * The Microsoft UHF banner is a custom plugin to provide Microsoft sites
  * with a header and footer.
