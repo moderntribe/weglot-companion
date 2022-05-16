@@ -43,6 +43,10 @@ class Translate_Subscriber extends Abstract_Subscriber {
 				return $content;
 			}
 		}, 10, 3 );
+
+		add_filter( 'microsoft/uhf/locale', function ( $locale ): string {
+			return $this->container->get( Uhf::class )->set_cookie_banner_locale( (string) $locale );
+		}, 10, 1 );
 	}
 
 }
