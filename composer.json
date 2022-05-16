@@ -72,7 +72,8 @@
   },
   "autoload-dev": {
     "psr-4": {
-      "Tribe\\Tests\\": "dev/tests/tests/_support/Classes/"
+      "Tribe\\Tests\\": "dev/tests/tests/_support/Classes/",
+      "Weglot\\Client\\Api\\": "public/wp-content/plugins/weglot/vendor/weglot/weglot-php/src/Client/Api/"
     }
   },
   "scripts": {
