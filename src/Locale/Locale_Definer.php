@@ -12,9 +12,14 @@ class Locale_Definer implements Definer_Interface {
 	public function define(): array {
 		return [
 			Locale::class => DI\autowire()
-			->constructorParameter( 'locales', static fn ( ContainerInterface $c ) =>
-				json_decode( file_get_contents( $c->get( Core::RESOURCES_PATH ) . '/json/locales.json' ), true )
-			),
+				->constructorParameter(
+					'locales',
+					static fn( ContainerInterface $c ) =>
+					json_decode(
+						file_get_contents( $c->get( Core::RESOURCES_PATH ) . '/json/locales.json' ),
+						true
+					)
+				),
 		];
 	}
 
