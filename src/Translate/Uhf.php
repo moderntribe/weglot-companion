@@ -2,6 +2,8 @@
 
 namespace Tribe\Weglot\Translate;
 
+use Tribe\Weglot\Locale\Locale;
+
 /**
  * The Microsoft UHF banner is a custom plugin to provide Microsoft sites
  * with a header and footer.
@@ -11,9 +13,11 @@ namespace Tribe\Weglot\Translate;
 class Uhf {
 
 	protected Language $language;
+	protected Locale $locale;
 
-	public function __construct( Language $language ) {
+	public function __construct( Language $language, Locale $locale ) {
 		$this->language = $language;
+		$this->locale   = $locale;
 	}
 
 	/**
@@ -34,7 +38,7 @@ class Uhf {
 			return $locale;
 		}
 
-		return $this->language->current()->getExternalCode();
+		return $this->locale->get_locale( $this->language->current()->getExternalCode() );
 	}
 
 }
