@@ -9,6 +9,7 @@ use Tribe\Libs\Object_Meta\Object_Meta_Subscriber;
 use Tribe\Libs\Settings\Settings_Subscriber;
 use Tribe\Weglot\Cache\Cache_Subscriber;
 use Tribe\Weglot\Config\Config_Subscriber;
+use Tribe\Weglot\Locale\Locale_Definer;
 use Tribe\Weglot\Meta\Meta_Definer;
 use Tribe\Weglot\Settings\Settings_Definer;
 use Tribe\Weglot\Translate\Translate_Definer;
@@ -38,6 +39,7 @@ final class Core {
 	 */
 	private array $definers = [
 		Translate_Definer::class,
+		Locale_Definer::class,
 		Meta_Definer::class,
 		Settings_Definer::class,
 	];
