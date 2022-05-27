@@ -138,8 +138,10 @@ return [
 				return $content;
 			}
 
+			$filter = uniqid( 'tribe_weglot_get_meta_repo_' );
+
 			// Ensure our meta repo WP filter is unique from other tribe-libs instances
-			return str_replace( 'tribe_get_meta_repo', 'tribe_get_meta_repo_scoped', $content );
+			return str_replace( 'tribe_get_meta_repo', $filter, $content );
 		},
 		static function ( string $filePath, string $prefix, string $content ): string {
 
