@@ -4,7 +4,7 @@
  * Plugin Name:       Tribe Weglot Companion
  * Plugin URI:        https://github.com/moderntribe/weglot-companion
  * Description:       Weglot Companion WordPress Plugin
- * Version:           1.2.1
+ * Version:           1.2.2
  * Requires PHP:      7.4
  * Author:            Modern Tribe
  * Author URI:        https://tri.be
