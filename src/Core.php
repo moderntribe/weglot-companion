@@ -62,8 +62,6 @@ final class Core {
 
 	/**
 	 * Singleton constructor.
-	 *
-	 * @return self
 	 */
 	public static function instance(): self {
 		if ( ! isset( self::$instance ) ) {
@@ -104,8 +102,6 @@ final class Core {
 
 	/**
 	 * Returns the PHP-DI container.
-	 *
-	 * @return \Psr\Container\ContainerInterface
 	 */
 	public function get_container(): ContainerInterface {
 		return $this->container;
