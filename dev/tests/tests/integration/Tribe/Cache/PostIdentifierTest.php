@@ -66,4 +66,12 @@ final class PostIdentifierTest extends Test_Case {
 		$this->assertSame( $post_id, $post_identifier->get_current_post_id() );
 	}
 
+	public function test_it_does_not_find_a_post_when_missing_http_host(): void {
+		unset( $_SERVER['HTTP_HOST'] );
+
+		$post_identifier = $this->container->get( Post_Identifier::class );
+
+		$this->assertSame( 0, $post_identifier->get_current_post_id() );
+	}
+
 }
