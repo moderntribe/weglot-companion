@@ -14,6 +14,9 @@ use WeglotWP\Services\Translate_Service_Weglot;
 
 class Translate_Definer implements Definer_Interface {
 
+	/**
+	 * @return mixed[]
+	 */
 	public function define(): array {
 		return [
 			Parser::class                     => static fn () => weglot_get_service( 'Parser_Service_Weglot' )->get_parser(),
