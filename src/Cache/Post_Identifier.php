@@ -2,6 +2,7 @@
 
 namespace Tribe\Weglot\Cache;
 
+use League\Uri\Exceptions\SyntaxError;
 use Tribe\Weglot\Uri\Uri_Factory;
 
 class Post_Identifier {
@@ -16,8 +17,6 @@ class Post_Identifier {
 	 * Detect the currently viewed post_id.
 	 *
 	 * @param array $server The PHP $_SERVER global or an array that matches that structure.
-	 *
-	 * @return int
 	 */
 	public function get_current_post_id( array $server = [] ): int {
 		global $post;
@@ -28,7 +27,11 @@ class Post_Identifier {
 			return $post->ID;
 		}
 
-		$uri = $this->uri_factory->create_from_server( $server );
+		try {
+			$uri = $this->uri_factory->create_from_server( $server );
+		} catch ( SyntaxError $e ) {
+			return 0;
+		}
 
 		return url_to_postid( $uri->toString() );
 	}

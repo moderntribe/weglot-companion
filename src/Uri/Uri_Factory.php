@@ -11,8 +11,6 @@ class Uri_Factory {
 	 * Create a Uri instance.
 	 *
 	 * @param array $server The PHP $_SERVER global, or something similar.
-	 *
-	 * @return \League\Uri\Contracts\UriInterface
 	 */
 	public function create_from_server( array $server = [] ): UriInterface {
 		if ( empty( $server ) ) {

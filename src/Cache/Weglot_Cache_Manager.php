@@ -39,8 +39,6 @@ class Weglot_Cache_Manager {
 	 * @filter weglot_html_treat_page
 	 *
 	 * @param string $translated_content
-	 *
-	 * @return string
 	 */
 	public function cache_translation( string $translated_content ): string {
 		if ( $this->skip_cache() || empty( $translated_content ) ) {
@@ -63,8 +61,6 @@ class Weglot_Cache_Manager {
 	 * @filter weglot_active_translation_before_treat_page
 	 *
 	 * @param  bool  $active_translation
-	 *
-	 * @return bool
 	 */
 	public function render_cached_translation( bool $active_translation ): bool {
 		if ( $this->skip_cache() ) {
@@ -104,8 +100,6 @@ class Weglot_Cache_Manager {
 	/**
 	 * Whether we should skip caching or displaying cached data for a
 	 * translated post.
-	 *
-	 * @return bool
 	 */
 	protected function skip_cache(): bool {
 		if ( ! $this->post_id() ) {
